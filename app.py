@@ -35,6 +35,10 @@ def handle_mqtt_message(client, userdata, message):
    landmines.append(newLandmine)
    print(landmines)
 
+@app.route('/')
+def sendLandmines():
+    return "Welcome to GPS handler"
+
 @app.route('/get-landmines', methods=['GET'])
 def sendLandmines():
     return jsonify(landmines)
